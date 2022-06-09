@@ -1,22 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+
+import Component_1 from "./component_1";
+import MyForm from "./formComponent";
 
 function App() {
+  console.log("App");
+  const [text, setText] = useState("some text XD");
+
+  const liftingPropsTest = () => {
+    console.log("function called from component_1");
+    setText("text changed");
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Component_1
+          name="nameProp"
+          functionProp={liftingPropsTest}
+        />
+        <MyForm />
+        <span>{text}</span>
       </header>
     </div>
   );
