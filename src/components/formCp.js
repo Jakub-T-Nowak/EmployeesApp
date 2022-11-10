@@ -1,14 +1,11 @@
-import { useState } from "react";
-
-const MyForm = (xyz) => {
+const MyForm = (props) => {
     const handleSubmit = (event) => {
-        xyz.sendValue("");
-        console.log(xyz);
+        props.sendValue("");
         event.preventDefault();
     };
 
     const handleChange = (e) => {
-        xyz.sendValue(e.target.value);
+        props.sendValue(e.target.value);
     };
 
     return (

@@ -1,8 +1,6 @@
 import "./listCp.sass"
 
-export function ListItems({ items }) {
-    console.log(items);
-
+const List = ({ items }) => {
     return (
         <div className="list__vrapper">
             {items.map(({ name, age, solary, id }) => (
@@ -13,3 +11,5 @@ export function ListItems({ items }) {
         </div>
     );
 }
+
+export default List;
