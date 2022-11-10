@@ -1,0 +1,23 @@
+[33mcommit c428f5b1001704561d30641b2576fe9e4d0d4f11[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Jakub <jnow87@gmail.com>
+Date:   Thu Nov 10 16:48:45 2022 +0100
+
+    J-002: SASS added, small refactor
+
+[33mcommit 553a5c51669f8f5d022f0039af8809c3407cecf4[m
+Author: Jakub <jnow87@gmail.com>
+Date:   Mon Nov 7 12:26:00 2022 +0100
+
+    J-001: removing unnecessary files and small refactoring
+
+[33mcommit e0f88b19e7a0ea784287529275ea64f5da778752[m
+Author: Jakub <jnow87@gmail.com>
+Date:   Thu Jun 9 20:02:44 2022 +0200
+
+    J-0: experimenting with React
+
+[33mcommit 97c6b4685d7f35ef16fc30762af5fee3523e2b0f[m
+Author: Jakub <jnow87@gmail.com>
+Date:   Fri Mar 25 20:07:02 2022 +0100
+
+    Initialize project using Create React App

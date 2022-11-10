@@ -6,6 +6,8 @@ export default function Component_1(props) {
     console.log("click...");
   }
 
+//props.children
+
   return (
     <div
       onClick={clickEvent}
