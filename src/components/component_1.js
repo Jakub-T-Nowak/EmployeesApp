@@ -4,7 +4,6 @@ export default function Component_1(props) {
 
   const clickEvent = () => {
     console.log("click...");
-    props.functionProp("Aaaaa");
   }
 
   return (
