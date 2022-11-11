@@ -1,4 +1,4 @@
-const MyForm = (props) => {
+const Form = (props) => {
     const handleSubmit = (event) => {
         props.sendValue("");
         event.preventDefault();
@@ -15,4 +15,4 @@ const MyForm = (props) => {
     );
 };
 
-export default MyForm;
+export default Form;

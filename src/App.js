@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./App.css";
 
 import Component_1 from "./components/Component_1";
-import MyForm from "./components/formCp";
-import List from "./components/List";
+import Form from "./components/Form";
+import List from "./components/List/List";
 import DUMMY_DATA from "./dataPlaceholder/dummyData";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <Component_1 />
-                <MyForm sendValue={liftingPropsTest} />
+                <Form sendValue={liftingPropsTest} />
                 <span style={{ height: "30px" }}>{text}</span>
                 <List items={DUMMY_DATA} />
             </header>
