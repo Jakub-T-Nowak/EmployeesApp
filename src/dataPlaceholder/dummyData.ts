@@ -1,4 +1,11 @@
- const DUMMY_DATA = [
+export interface employee {
+    name: string;
+    age: number;
+    solary: number;
+    id: number
+}
+
+ const DUMMY_DATA: employee [] = [
     {
         name: "Jan",
         age: 28,

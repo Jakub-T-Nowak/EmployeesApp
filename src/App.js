@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 
-import Component_1 from "./components/Component_1";
+import Component_1 from "./components/Component_1.tsx";
 import Form from "./components/Form";
-import List from "./components/List/List";
-import DUMMY_DATA from "./dataPlaceholder/dummyData";
+import List from "./components/List/List.tsx";
+import DUMMY_DATA from "./dataPlaceholder/dummyData.ts";
 
 function App() {
     const [text, setText] = useState("some text");

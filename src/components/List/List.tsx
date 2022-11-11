@@ -1,8 +1,14 @@
+import React from "react";
 import ListItem from "./ListItem";
+import {employee} from"../../dataPlaceholder/dummyData"
 
 import "./List.sass";
 
-const List = ({ items }) => {
+interface props {
+    items: employee [];
+}
+
+const List: React.FC<props> = ({ items }) => {
     return (
         <div className="list__vrapper">
             {items.map((item) => (

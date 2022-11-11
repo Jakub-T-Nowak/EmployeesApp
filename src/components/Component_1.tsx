@@ -1,12 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import "./Component_1.sass";
 
-export default function Component_1() {
+const Component_1: React.FC = () => {
     const [color, setColor] = useState("red");
 
     const clickEvent = () => {
-        const newColor = color === "red" ? "blue" : "red";
+        const newColor: string = color === "red" ? "blue" : "red";
         setColor(newColor);
     };
 
@@ -21,4 +21,6 @@ export default function Component_1() {
             <span>Click</span>
         </div>
     );
-}
+};
+
+export default Component_1;
