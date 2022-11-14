@@ -1,28 +1,24 @@
 export interface employee {
     name: string;
-    age: number;
-    solary: number;
-    id: number
+    age: string;
+    salary: string;
 }
 
  const DUMMY_DATA: employee [] = [
     {
         name: "Jan",
-        age: 28,
-        solary: 3900,
-        id: 1,
+        age: '28',
+        salary: '3900',
     },
     {
         name: "Tomasz",
-        age: 22,
-        solary: 2800,
-        id: 2,
+        age: '22',
+        salary: '2800',
     },
     {
         name: "Joanna",
-        age: 40,
-        solary: 4200,
-        id: 3,
+        age: '40',
+        salary: '4200',
     },
 ];
 

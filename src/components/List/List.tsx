@@ -11,8 +11,8 @@ interface props {
 const List: React.FC<props> = ({ items }) => {
     return (
         <div className="list__vrapper">
-            {items.map((item) => (
-                <ListItem item={item} className="list__item" key={item.id} />
+            {items.map((item, i) => (
+                <ListItem item={item} className="list__item" key={i} />
             ))}
         </div>
     );

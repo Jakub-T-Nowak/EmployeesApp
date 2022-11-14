@@ -1,5 +1,5 @@
-const ListItem = ({ item: { name, age, solary }, className }) => {
-    const text = `${name}, ${age}, ${solary}`;
+const ListItem = ({ item: { name, age, salary }, className }) => {
+    const text = `${name}, ${age}, ${salary}`;
     return <p className={className}>{text}</p>;
 };
 

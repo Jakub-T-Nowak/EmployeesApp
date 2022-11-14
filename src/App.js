@@ -1,25 +1,26 @@
 import { useState } from "react";
 import "./App.css";
 
-import Component_1 from "./components/Component_1.tsx";
 import Form from "./components/Form";
 import List from "./components/List/List.tsx";
+import Filter from "./components/Filter.tsx";
+import DataVisualization from "./components/DataVisualization";
 import DUMMY_DATA from "./dataPlaceholder/dummyData.ts";
 
 function App() {
-    const [text, setText] = useState("some text");
+    const [data, setData] = useState(DUMMY_DATA);
 
-    const liftingPropsTest = (value) => {
-        setText(value);
+    const dataHandler = (value) => {
+        setData((prev)=> [...prev, value]);
     };
 
     return (
         <div className="App">
             <header className="App-header">
-                <Component_1 />
-                <Form sendValue={liftingPropsTest} />
-                <span style={{ height: "30px" }}>{text}</span>
-                <List items={DUMMY_DATA} />
+                <Form onDataChange={dataHandler} />
+                <Filter/>
+                <DataVisualization></DataVisualization>
+                <List items={data} />
             </header>
         </div>
     );

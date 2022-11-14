@@ -1,9 +1,13 @@
+body {
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #e6ebff;
   padding: 20px;
   /* min-height: 50vh; */
   display: flex;
@@ -11,5 +15,4 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
