@@ -1,0 +1,69 @@
+@import "../commonStyles/_background"
+
+@mixin x-description-common
+    font-size: 13px
+    text-align: right
+    position: absolute
+    left: -11px
+    width: 40px
+    
+
+.visualization
+    @include background
+    height: 200px
+    min-width: 200px
+
+    &__header
+        margin-bottom: 20px
+    &__data
+        position: relative
+        display: flex
+        align-items: flex-end
+        height: 100px
+    &__data-item
+        width: 12px
+        background-color: red
+        margin-left: 6px
+
+    .lines
+        width: 10px
+        height: 100px
+        border-right: 1px solid black
+        border-bottom: 1px solid black
+        border-top: 1px solid black
+        margin-left: 30px
+
+    .lines-center
+        height: 50px
+        border-bottom: 1px solid black
+
+    .y-description
+        &__max
+            @include x-description-common
+            top: -10px
+
+        &__med
+            @include x-description-common
+            top: 41px
+
+        &__min
+            @include x-description-common
+            top: 91px
+
+
+    .x-description
+        margin-left: 40px
+        display: flex
+        &__inner
+            width: 12px
+            margin-left: 6px
+        &__outer
+            overflow: hidden
+            text-overflow: ellipsis
+            transform: rotate(-45deg)
+            font-size: 13px
+            text-align: right
+            width: 60px
+            height: 13px
+            margin-left: -47px
+            margin-top: 22px
