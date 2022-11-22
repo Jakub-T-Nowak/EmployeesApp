@@ -5,7 +5,7 @@ const DataVisualization = ({ items }) => {
     const employees = items;
     const salaries = employees.map((employee) => employee.salary);
     const maxSalary = Math.max(...salaries);
-    const maxSalaryCeil = Math.ceil(maxSalary/1000)*1000;
+    const maxSalaryCeil = Math.ceil(maxSalary / 1000) * 1000;
 
     const heights = salaries.map((salary) => {
         return 100 * (salary / maxSalaryCeil);
@@ -17,8 +17,9 @@ const DataVisualization = ({ items }) => {
 
             <div className="visualization__data">
                 <div className="y-description__max">{maxSalaryCeil}</div>
-                <div className="y-description__med">{maxSalaryCeil/2}</div>
+                <div className="y-description__med">{maxSalaryCeil / 2}</div>
                 <div className="y-description__min">0</div>
+
                 <div className="lines">
                     <div className="lines-center"></div>
                 </div>
@@ -31,10 +32,10 @@ const DataVisualization = ({ items }) => {
                 ))}
             </div>
 
-            <div className="x-description">
+            <div className="visualization__data-description">
                 {employees.map(({ name }) => (
-                    <div className="x-description__inner">
-                        <p className="x-description__outer">{name}</p>
+                    <div>
+                        <p>{name}</p>
                     </div>
                 ))}
             </div>

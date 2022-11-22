@@ -1,7 +1,7 @@
 import React, { useReducer } from "react";
 import { initialState, ACTIONS, CONDITIONS } from "./FormConsts.ts";
 
-import "./Form.sass";
+import styles from "./Form.module.sass";
 
 const emailReducer = (prevVal, { type, val: { name, value } = {} }) => {
     let newVal = { ...prevVal };
@@ -45,34 +45,31 @@ const Form = (props) => {
         emailDispatcher({ type: ACTIONS.BLUR, val: target });
     };
 
-    const {valid: { name: nameV, age: ageV, salary: salaryV }} = formState;
+    const { valid: { name: nameV, age: ageV, salary: salaryV } } = formState;
+
+    const isHidden = (check) => check === false ? "" : styles.hidden;
+    const isInvalid = (check) => check === false ? styles.invalid : "";
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="name">Name:</label>
                 <input
-                    className={`form__input ${
-                        nameV === false ? "invalid" : ""
-                    }`}
+                    className={`${styles.form__input} ${isInvalid(nameV)}`}
                     type="text"
                     name="name"
                     value={formState.value.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
                 ></input>
-                <div
-                    className={`form__warning ${
-                        nameV === false ? "" : "hidden"
-                    }`}
-                >
+                <div className={`${styles.form__warning} ${isHidden(nameV)}`}>
                     {`Min ${CONDITIONS.NAME.MIN} and max ${CONDITIONS.NAME.MAX} characters.`}
                 </div>
             </div>
             <div>
                 <label htmlFor="age">age:</label>
                 <input
-                    className={`form__input ${ageV === false ? "invalid" : ""}`}
+                    className={`${styles.form__input} ${isInvalid(ageV)}`}
                     type="number"
                     name="age"
                     min={CONDITIONS.AGE.MIN}
@@ -82,19 +79,15 @@ const Form = (props) => {
                     onBlur={handleBlur}
                 ></input>
                 <div
-                    className={`form__warning ${
-                        ageV === false ? "" : "hidden"
-                    }`}
+                    className={`${styles.form__warning} ${isHidden(ageV)}`}
                 >
-                    {`Value must be: min ${CONDITIONS.AGE.MIN}, max ${CONDITIONS.AGE.MAX}.`}
+                    {`Min ${CONDITIONS.AGE.MIN}, max ${CONDITIONS.AGE.MAX}.`}
                 </div>
             </div>
             <div>
                 <label htmlFor="salary">salary:</label>
                 <input
-                    className={`form__input ${
-                        salaryV === false ? "invalid" : ""
-                    }`}
+                    className={`${styles.form__input} ${isInvalid(salaryV)}`}
                     type="number"
                     name="salary"
                     min={CONDITIONS.SALARY.MIN}
@@ -104,11 +97,9 @@ const Form = (props) => {
                     onBlur={handleBlur}
                 ></input>
                 <div
-                    className={`form__warning ${
-                        salaryV === false ? "" : "hidden"
-                    }`}
+                    className={`${styles.form__warning} ${isHidden(salaryV)}`}
                 >
-                    {`Value must be: min ${CONDITIONS.SALARY.MIN}, max ${CONDITIONS.SALARY.MAX}.`}
+                    {`Min ${CONDITIONS.SALARY.MIN}, max ${CONDITIONS.SALARY.MAX}.`}
                 </div>
             </div>
             <button disabled={!(nameV && ageV && salaryV)} type="submit">
