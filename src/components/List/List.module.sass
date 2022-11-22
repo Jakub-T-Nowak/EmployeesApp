@@ -1,0 +1,12 @@
+@import "../commonStyles/_background"
+
+.list 
+    @include background
+    padding-top: 20px
+    
+    &__item
+        margin: 0
+        &:nth-of-type(2n + 1)
+            background-color: #4d71ff
+        &:nth-of-type(2n)
+            background-color: #8099ff

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Filter = () => {
     return (
         <div className="Filter">
-            Filter
+            Filter WIP
         </div>
     )
 }

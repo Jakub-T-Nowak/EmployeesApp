@@ -1,18 +1,18 @@
 import React from "react";
-import ListItem from "./ListItem";
-import {employee} from"../../dataPlaceholder/dummyData"
+import ListItem from "./ListItem.tsx";
+import { employee } from "../../dataPlaceholder/dummyData";
 
-import "./List.sass";
+import styles from "./List.module.sass";
 
 interface props {
-    items: employee [];
+    items: employee[];
 }
 
 const List: React.FC<props> = ({ items }) => {
     return (
-        <div className="list__vrapper">
+        <div className={styles.list}>
             {items.map((item, i) => (
-                <ListItem item={item} className="list__item" key={i} />
+                <ListItem item={item} className={styles.list__item} key={i} />
             ))}
         </div>
     );

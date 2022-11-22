@@ -1,13 +1,5 @@
 @import "../commonStyles/_background"
 
-@mixin x-description-common
-    font-size: 13px
-    text-align: right
-    position: absolute
-    left: -11px
-    width: 40px
-    
-
 .visualization
     @include background
     height: 200px
@@ -38,17 +30,20 @@
         border-bottom: 1px solid black
 
     .y-description
-        &__max
-            @include x-description-common
-            top: -10px
+        font-size: 13px
+        text-align: right
+        position: absolute
+        left: -11px
+        width: 40px
 
-        &__med
-            @include x-description-common
-            top: 41px
+        &:nth-of-type(1)
+            top: -9px
 
-        &__min
-            @include x-description-common
-            top: 91px
+        &:nth-of-type(2)
+            top: 42px
+
+        &:nth-of-type(3)
+            top: 92px
 
     &__data-description
         margin-left: 40px
