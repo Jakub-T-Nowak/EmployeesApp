@@ -3,6 +3,7 @@ import "./App.css";
 
 import Form from "./components/form/Form";
 import List from "./components/List/List.tsx";
+import Header from "./components/header/Header";
 import Filter from "./components/Filter.tsx";
 import DataVisualization from "./components/dataVisualization/DataVisualization";
 import DUMMY_DATA from "./dataPlaceholder/dummyData.ts";
@@ -14,6 +15,7 @@ function App() {
 
     return (
         <div className="App App-header">
+            <Header/>
             <Form onDataChange={dataHandler} />
             <Filter />
             <DataVisualization items={data} />
