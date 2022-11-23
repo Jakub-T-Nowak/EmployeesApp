@@ -1,5 +1,6 @@
 import { useState } from "react";
-import "./App.css";
+import styles from "./App.module.sass"
+import "./Body.css";
 
 import Form from "./components/form/Form";
 import List from "./components/List/List.tsx";
@@ -14,7 +15,7 @@ function App() {
     const dataHandler = (value) => setData((prev) => [...prev, value]);
 
     return (
-        <div className="App App-header">
+        <div className={styles["App-header"]}>
             <Header/>
             <Form onDataChange={dataHandler} />
             <Filter />
