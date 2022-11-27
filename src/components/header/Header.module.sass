@@ -1,10 +1,22 @@
 @import "../commonStyles/colors"
     
 .header
+    display: flex
+    justify-content: space-between
     height: 30px
     width: 100%
+    padding-top: 10px
     position: fixed
     top: 0
     right: 0
     background-color: $background
     box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%)
+
+    &__app-name
+        margin-left: 30px
+    
+    &__navigation
+        margin-right: 25px
+
+    &__link
+        padding: 5px

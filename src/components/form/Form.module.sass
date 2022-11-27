@@ -1,13 +1,25 @@
 @import "../commonStyles/_background"
+@import "../commonStyles/colors"
 
 .form
     text-align: left
     width: 200px
     @include background
 
+    &__label
+        padding-left: 2px
+
     &__input
+        border-radius: 3px
+        border: 3px solid $card-background
         display: block
         width: 120px
+        height: 20px
+        transition: 0.5s
+        outline: none
+
+        &:focus
+            border: 3px solid #454555
 
     &__warning
         font-size: 12px
@@ -15,8 +27,7 @@
         margin-top: 2px
 
     .invalid
-        text
-        background-color: pink
+        border: 3px solid #F85265
 
     .hidden
         visibility: hidden

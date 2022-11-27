@@ -53,7 +53,7 @@ const Form = (props) => {
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="name">Name:</label>
+                <label className={styles.form__label} htmlFor="name">Name:</label>
                 <input
                     className={`${styles.form__input} ${isInvalid(nameV)}`}
                     type="text"
@@ -67,7 +67,7 @@ const Form = (props) => {
                 </div>
             </div>
             <div>
-                <label htmlFor="age">age:</label>
+                <label className={styles.form__label} htmlFor="age">Age:</label>
                 <input
                     className={`${styles.form__input} ${isInvalid(ageV)}`}
                     type="number"
@@ -85,7 +85,7 @@ const Form = (props) => {
                 </div>
             </div>
             <div>
-                <label htmlFor="salary">salary:</label>
+                <label className={styles.form__label} htmlFor="salary">Salary:</label>
                 <input
                     className={`${styles.form__input} ${isInvalid(salaryV)}`}
                     type="number"
