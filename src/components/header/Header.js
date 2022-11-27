@@ -5,14 +5,14 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles["header__app-name"]}>Employee App</div>
-            <div className={styles.header__navigation}>
+            <nav className={styles.header__navigation}>
                 <NavLink to="/home" className={styles.header__link}>
                     Home
                 </NavLink>
                 <NavLink to="/login" className={styles.header__link}>
                     Log in
                 </NavLink>
-            </div>
+            </nav>
         </header>
     );
 };

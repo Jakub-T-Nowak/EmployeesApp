@@ -1,19 +1,17 @@
 import React from "react";
-import { Route, BrowserRouter, Redirect } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 
-import Header from "./components/header/Header";
+import Layout from "./components/layout/Layout";
 import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 
-import styles from "./App.module.sass";
 import "./Body.css";
 
 function App() {
     return (
-        <BrowserRouter>
-            <Header />
-            <div className={styles["main-container"]}>
+        <Layout>
+            <Switch>
                 <Route path="/" exact>
                     <Redirect to="/home" />
                 </Route>
@@ -26,8 +24,8 @@ function App() {
                 <Route path="*">
                     <NotFoundPage />
                 </Route>
-            </div>
-        </BrowserRouter>
+            </Switch>
+        </Layout>
     );
 }
 
