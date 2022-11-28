@@ -16,7 +16,7 @@ const List: React.FC<props> = ({ items }) => {
     return (
         <div className={styles.list}>
             {items.map((item, i) => (
-                <ListItem item={item} className={styles.list__item} key={i} />
+                <ListItem item={item} key={i} />
             ))}
         </div>
     );

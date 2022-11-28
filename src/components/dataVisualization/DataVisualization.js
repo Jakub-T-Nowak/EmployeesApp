@@ -24,17 +24,18 @@ const DataVisualization = ({ items }) => {
                     <div className={styles["lines-center"]}></div>
                 </div>
 
-                {heights.map((height) => (
+                {heights.map((height, i) => (
                     <div
                         className={styles["visualization__data-item"]}
                         style={{ height: `${height}%` }}
+                        key={i}
                     ></div>
                 ))}
             </div>
 
             <div className={styles["visualization__data-description"]}>
-                {employees.map(({ name }) => (
-                    <div>
+                {employees.map(({ name }, i) => (
+                    <div key={i}>
                         <p>{name}</p>
                     </div>
                 ))}
