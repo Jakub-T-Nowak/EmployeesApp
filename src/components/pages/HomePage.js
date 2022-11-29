@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from "react";
 import Form from "../form/Form";
-import Filter from "../Filter.tsx";
+import Filter from "../filter/Filter.tsx";
 import List from "../List/List.tsx";
 import DataVisualization from "../dataVisualization/DataVisualization";
+
+import styles from "./Home.module.sass"
 
 import DUMMY_DATA from "../../dataPlaceholder/dummyData.ts";
 
@@ -11,12 +13,12 @@ const HomePage = () => {
     const dataHandler = (value) => setData((prev) => [...prev, value]);
 
     return (
-        <Fragment>
+        <div className={styles.home}>
             <Form onDataChange={dataHandler} />
-            <Filter />
-            <DataVisualization items={data} />
             <List items={data} />
-        </Fragment>
+            <DataVisualization items={data} />
+            <Filter />
+        </div>
     );
 };
 
