@@ -1,5 +1,13 @@
 @import "../commonStyles/_background"
 
-.list 
+.list
     @include background
-    padding-top: 20px
+    padding: 20px
+
+    &__header
+        height: 25px
+        background-color: red
+
+    &__wrapper
+        height: calc(100% - 25px)
+        overflow-y: scroll

@@ -15,9 +15,12 @@ interface props {
 const List: React.FC<props> = ({ items }) => {
     return (
         <div className={styles.list}>
-            {items.map((item, i) => (
-                <ListItem item={item} key={i} />
-            ))}
+            <div className={styles.list__header}>List header WIP</div>
+            <div className={styles.list__wrapper}>
+                {items.map((item, i) => (
+                    <ListItem item={item} key={i} />
+                ))}
+            </div>
         </div>
     );
 };
