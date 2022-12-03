@@ -1,7 +1,7 @@
 import React from "react";
 import { employee } from "../../dataPlaceholder/dummyData";
 
-import styles from "./Item.module.sass";
+import styles from "./styles/Item.module.sass";
 
 interface props {
     item: employee;
