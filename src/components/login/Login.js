@@ -16,13 +16,11 @@ const Login = () => {
         const userName = userNameRef.current.value;
         const password = passwordRef.current.value;
 
-        try {
-            const x = FirebaseAuthService.registerUser(userName, password)
-                x.then((userCredential) => {
-                    console.log(userCredential);
-                })
-                .catch((e) => console.log(e.message));
-        } catch (e){console.log(e)}
+        FirebaseAuthService.registerUser(userName, password)
+            .then((userCredential) => {
+                console.log(userCredential);
+            })
+            .catch((e) => console.log(e.message));
     };
 
     const logOut = () => {

@@ -24,7 +24,8 @@ const logoutUser = () => {
 
 const subscribeToAuthChanges = (handleAuthChange) => {
     onAuthStateChanged(auth, (user) => {
-        handleAuthChange(user);
+        const isLogged = !!user
+            handleAuthChange(isLogged);
     });
 };
 
@@ -32,7 +33,7 @@ const FirebaseAuthService = {
     registerUser,
     loginUser,
     logoutUser,
-    subscribeToAuthChanges
-}
+    subscribeToAuthChanges,
+};
 
 export default FirebaseAuthService;
