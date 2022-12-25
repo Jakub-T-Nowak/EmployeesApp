@@ -24,8 +24,8 @@ const logoutUser = () => {
 
 const subscribeToAuthChanges = (handleAuthChange) => {
     onAuthStateChanged(auth, (user) => {
-        const isLogged = !!user
-            handleAuthChange(isLogged);
+        const isLogged = !!user;
+        handleAuthChange(isLogged);
     });
 };
 

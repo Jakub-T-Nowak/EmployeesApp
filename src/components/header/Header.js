@@ -24,7 +24,7 @@ const Header = () => {
                     className={styles.header__link}
                     activeClassName={styles.active}
                 >
-                    Log in
+                    {ctx.isLogged ? "Log out" : "Log in"}
                 </NavLink>
             </nav>
         </header>
