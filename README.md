@@ -1,4 +1,4 @@
-#App for managing employees.
+# App for managing employees.
 Written in React.
 Work in progress.
 
