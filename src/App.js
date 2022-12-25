@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
-
+import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import Layout from "./components/layout/Layout";
 import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
@@ -15,9 +15,9 @@ function App() {
                 <Route path="/" exact>
                     <Redirect to="/home" />
                 </Route>
-                <Route path="/home">
+                <ProtectedRoute path="/home">
                     <HomePage />
-                </Route>
+                </ProtectedRoute>
                 <Route path="/login">
                     <LoginPage />
                 </Route>

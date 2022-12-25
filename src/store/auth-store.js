@@ -6,13 +6,12 @@ export const AuthContext = React.createContext({
 });
 
 const AuthContextProvider = ({ children }) => {
-    const [isLogged, setIsLogged] = useState(false);
-
+    const [isLogged, setIsLogged] = useState(null);
     FirebaseAuthService.subscribeToAuthChanges(setIsLogged);
 
     return (
         <AuthContext.Provider value={{ isLogged }}>
-            {children}
+            {isLogged !== null && children}
         </AuthContext.Provider>
     );
 };
