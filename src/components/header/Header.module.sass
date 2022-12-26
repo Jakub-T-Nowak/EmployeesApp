@@ -1,5 +1,5 @@
 @import "../commonStyles/colors"
-    
+
 .header
     display: flex
     justify-content: space-between
@@ -14,22 +14,28 @@
 
     &__app-name
         margin-left: 30px
-    
+
     &__navigation
+        display: flex
         margin-right: 20px
+        margin-top: -3px
 
     &__link
-        padding: 5px
-        margin-right: 5px
-        border-radius: 4px
+        display: block
+        height: 15px
+        padding: 4px 5px 6px 5px
+        margin-right: 7px
+        border-radius: 5px
         text-decoration: none
         color: $text-primary
+    
+        &:last-of-type
+            padding: 1px 5px 9px 5px
 
-        &:hover
-            background-color: #8492c1
-        &:active
-            color: black
-        
+            &:hover
+                background-color: #8492c1
+            &:active
+                color: black
+
     .active
-        background-color:#bfc8ed
-  
+        background-color: #bfc8ed

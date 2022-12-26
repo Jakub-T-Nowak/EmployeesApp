@@ -26,6 +26,13 @@ const Header = () => {
                 >
                     {ctx.isLogged ? "Log out" : "Log in"}
                 </NavLink>
+                <NavLink
+                    to="/settings"
+                    className={styles.header__link}
+                    activeClassName={styles.active}
+                >
+                    <span className="material-symbols-outlined">settings</span>
+                </NavLink>
             </nav>
         </header>
     );

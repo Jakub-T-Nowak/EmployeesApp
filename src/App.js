@@ -4,6 +4,7 @@ import ProtectedRoute from "./components/protectedRoute/ProtectedRoute";
 import Layout from "./components/layout/Layout";
 import HomePage from "./components/pages/HomePage";
 import LoginPage from "./components/pages/LoginPage";
+import SettingsPage from "./components/pages/Settings";
 import NotFoundPage from "./components/pages/NotFoundPage";
 
 import "./Body.css";
@@ -21,6 +22,9 @@ function App() {
                 <Route path="/login">
                     <LoginPage />
                 </Route>
+                <ProtectedRoute path="/settings">
+                    <SettingsPage />
+                </ProtectedRoute>
                 <Route path="*">
                     <NotFoundPage />
                 </Route>
