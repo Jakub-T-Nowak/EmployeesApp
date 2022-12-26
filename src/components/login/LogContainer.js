@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../store/auth-store";
-import styles from "./Login.module.sass";
+import styles from "./LogIn.module.sass";
 import LogOut from "./LogOut";
 import LogIn from "./LogIn";
 
