@@ -1,6 +1,6 @@
 import React, { Fragment, useRef, useState } from "react";
 import FirebaseAuthService from "../../FirebaseAuthService";
-import styles from "./Login.module.sass";
+import styles from "./LogIn.module.sass";
 
 const LogIn = () => {
     const [log, setLog] = useState(false);
