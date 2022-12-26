@@ -1,9 +1,11 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useRef, useState, useContext } from "react";
+import { AuthContext } from "../../store/auth-store";
 import FirebaseAuthService from "../../FirebaseAuthService";
 import styles from "./LogIn.module.sass";
 
 const LogIn = () => {
     const [log, setLog] = useState(false);
+    const { setFirstTime } = useContext(AuthContext);
     const userNameRef = useRef();
     const passwordRef = useRef();
 
@@ -19,6 +21,7 @@ const LogIn = () => {
 
         firebaseAction(userName, password)
             .then(userCredential => {
+                setFirstTime(true);
                 console.log(userCredential);
             })
             .catch(e => console.log(e.message));
@@ -35,7 +38,7 @@ const LogIn = () => {
             </button>
             <form onSubmit={handleSubmit}>
                 <label className={styles.login__label}>User</label>
-                <input type="text" ref={userNameRef} />
+                <input type="text" ref={userNameRef} autoFocus />
                 <label>Login</label>
                 <input type="text" ref={passwordRef} />
                 <button type="submit">{log ? "Log in" : "Sign in"}</button>
