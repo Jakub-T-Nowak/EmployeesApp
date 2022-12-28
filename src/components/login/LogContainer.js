@@ -5,11 +5,12 @@ import LogOut from "./LogOut";
 import LogIn from "./LogIn";
 
 const LogContainer = () => {
-    const { isLogged } = useContext(AuthContext);
+    const { isLogged, firstTime } = useContext(AuthContext);
 
     return (
         <div className={styles.login}>
             {!isLogged && <LogIn />}
+            {isLogged && firstTime && (<div>{"You're succesfully logged in."}</div>)}
             {isLogged && <LogOut />}
         </div>
     );

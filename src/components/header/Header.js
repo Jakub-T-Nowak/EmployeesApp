@@ -4,13 +4,17 @@ import styles from "./Header.module.sass";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
-    const ctx = useContext(AuthContext);
+    const { isLogged, setFirstTime } = useContext(AuthContext);
+
+    const hideLoggedFirstTimeInfo = () => {
+        setFirstTime(false);
+    };
 
     return (
         <header className={styles.header}>
             <div className={styles["header__app-name"]}>Employee App</div>
-            <nav className={styles.header__navigation}>
-                {ctx.isLogged && (
+            <nav className={styles.header__navigation} onClick={hideLoggedFirstTimeInfo}>
+                {isLogged && (
                     <NavLink
                         to="/home"
                         className={styles.header__link}
@@ -24,15 +28,19 @@ const Header = () => {
                     className={styles.header__link}
                     activeClassName={styles.active}
                 >
-                    {ctx.isLogged ? "Log out" : "Log in"}
+                    {isLogged ? "Log out" : "Log in"}
                 </NavLink>
-                <NavLink
-                    to="/settings"
-                    className={styles.header__link}
-                    activeClassName={styles.active}
-                >
-                    <span className="material-symbols-outlined">settings</span>
-                </NavLink>
+                {isLogged && (
+                    <NavLink
+                        to="/settings"
+                        className={styles.header__link}
+                        activeClassName={styles.active}
+                    >
+                        <span className="material-symbols-outlined">
+                            settings
+                        </span>
+                    </NavLink>
+                )}
             </nav>
         </header>
     );
