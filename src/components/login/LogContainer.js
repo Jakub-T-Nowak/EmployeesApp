@@ -10,7 +10,7 @@ const LogContainer = () => {
     return (
         <div className={styles.login}>
             {!isLogged && <LogIn />}
-            {isLogged && firstTime && (<div>{"Hello <user name>, you're logged."}</div>)}
+            {isLogged && firstTime && (<div>{"You're succesfully logged in."}</div>)}
             {isLogged && <LogOut />}
         </div>
     );
