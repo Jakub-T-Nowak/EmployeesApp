@@ -1,24 +1,4 @@
-export const ACTIONS = {
-    INPUT: "input",
-    BLUR: "blur",
-    SUBMIT: "submit",
-};
-
-export const initialState = {
-    value: {
-        name: "",
-        age: "",
-        salary: "",
-    },
-    valid: {
-        name: null,
-        age: null,
-        salary: null,
-    },
-};
-
-
-export const CONDITIONS = {
+export const inputConf = {
     NAME: {
         MIN: 5,
         MAX: 50
