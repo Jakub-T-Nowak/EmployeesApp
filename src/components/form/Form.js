@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, createRef } from "react";
 import InputNumber from "./inputs/InputNumber";
 import InputText from "./inputs/InputText";
 
@@ -6,15 +6,21 @@ import styles from "./Form.module.sass";
 
 const Form = props => {
     const [submit, setSubmit] = useState(0);
-    const [name, setName] = useState(null);
-    const [age, setAge] = useState(null);
-    const [salary, setSalary] = useState(null);
+    const refName = createRef();
+    const refAge = createRef();
+    const refSalary = createRef();
 
     const handleSubmit = event => {
         event.preventDefault();
 
-        //not a very good validation
-        if (name && age && salary) {
+        const valName = refName.current.checkValidity();
+        const valAge = refAge.current.checkValidity();
+        const valSalary = refSalary.current.checkValidity();
+        const name = refName.current.value;
+        const age = refAge.current.value;
+        const salary = refSalary.current.value;
+
+        if (valName && valAge && valSalary) {
             props.onDataChange({ name, age, salary });
             // adding number indicates that input should be reseted
             setSubmit(p => ++p);
@@ -24,22 +30,10 @@ const Form = props => {
         }
     };
 
-    const sendNameHandler = name => {
-        setName(name);
-    };
-
-    const sendAgeHandler = age => {
-        setAge(age);
-    };
-
-    const sendSalaryHandler = salary => {
-        setSalary(salary);
-    };
-
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
             <InputText
-                onSend={sendNameHandler}
+                ref={refName}
                 submit={submit}
                 namee="Name"
                 min={2}
@@ -47,7 +41,7 @@ const Form = props => {
                 errorMessage="Min length 2, max length 50."
             />
             <InputNumber
-                onSend={sendAgeHandler}
+                ref={refAge}
                 submit={submit}
                 namee="age"
                 min={17}
@@ -55,7 +49,7 @@ const Form = props => {
                 errorMessage="Min value 17, max value 70."
             />
             <InputNumber
-                onSend={sendSalaryHandler}
+                ref={refSalary}
                 submit={submit}
                 namee="salary"
                 min={2000}
