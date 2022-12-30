@@ -1,6 +1,6 @@
 import React from "react";
-import FirebaseAuthService from "../../FirebaseAuthService";
-import styles from "./LogIn.module.sass";
+import FirebaseAuthService from "FirebaseAuthService";
+import styles from "./LogOut.module.sass";
 
 const LogOut = () => {
     const logOut = () => {

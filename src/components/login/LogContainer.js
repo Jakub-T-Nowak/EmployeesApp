@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../../store/auth-store";
-import styles from "./LogIn.module.sass";
-import LogOut from "./LogOut";
-import LogIn from "./LogIn";
+import { AuthContext } from "store/auth-store";
+import styles from "./LogContainer.module.sass";
+import LogOut from "./logOut/LogOut";
+import LogIn from "./logIn/LogIn";
 
 const LogContainer = () => {
     const { isLogged, firstTime } = useContext(AuthContext);
 
     return (
-        <div className={styles.login}>
+        <div className={styles.container}>
             {!isLogged && <LogIn />}
             {isLogged && firstTime && (<div>{"You're succesfully logged in."}</div>)}
             {isLogged && <LogOut />}
